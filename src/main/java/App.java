@@ -3,7 +3,8 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-        get("/hello", (request, response) ->
+        get("/", (request, response) ->
+
         "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
@@ -11,6 +12,7 @@ public class App {
                 "<link rel='stylesheet' + href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>" +
                 "</head>" +
                 "<body>" +
+                "<p><a href='/favorite_photos' >P.S. Check out my favorite travel photos here.</a></p>" +
                 "<h1>Hello From Afar</h1>" +
                 "<p>Dear Friend,</p>" +
                 "<p>How are you? I hope that you are having a nice weekend. I'm vacationing in the Iceland while I learn programming! </p>" +
@@ -20,6 +22,7 @@ public class App {
                 "<p>Cheers,</p>" +
                 "<p>Travel Enthusiast Jane</p>" +
                 "</body>" +
+
                 "</html>"
     );
 

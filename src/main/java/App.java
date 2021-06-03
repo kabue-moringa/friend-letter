@@ -6,7 +6,10 @@ import java.util.Map;
 
 import static spark.Spark.get;
 import static spark.Spark.staticFileLocation;
+
 public class App {
+    public static Object welcome;
+
     public static void main(String[] args) {
         staticFileLocation("/public");
         get("/", (request, response) -> {
@@ -30,5 +33,7 @@ public class App {
             model.put("sender", sender);
             return new ModelAndView(model, "greeting_card.hbs");
         }, new HandlebarsTemplateEngine());
+
+//
     }
 }
